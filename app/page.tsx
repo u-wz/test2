@@ -1,11 +1,10 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import Image from 'next/image' // Replace img with Next.js Image
+import Image from 'next/image'
 
 export default function SeoriBirthdayPage() {
   const [currentPhase, setCurrentPhase] = useState(1)
-  const [musicStarted, setMusicStarted] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [touchStart, setTouchStart] = useState(0)
@@ -279,20 +278,16 @@ export default function SeoriBirthdayPage() {
         </div>
       )}
 
-      {/* Phase 6: News Surprise */}
+      {/* Phase 6: News Article */}
       {currentPhase === 6 && (
-        <div
-          className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 p-4 ${isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}
-        >
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800 fade-in-1">
-            Don't be surprised but you're on the news :O
-          </h2>
-          <div className="news-article bg-white border-4 border-gray-300 rounded-lg shadow-2xl p-6 mb-8 max-w-lg fade-in-2 transform hover:scale-105 transition-transform">
+        <div className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 p-4 ${isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}>
+          <div className="news-article bg-white border-4 border-gray-300 rounded-lg shadow-2xl p-6 mb-8 max-w-lg fade-in-2">
             <div className="text-center">
-              <h3 className="text-xl font-bold mb-4 text-red-600">🚨 BREAKING NEWS 🚨</h3>
-              <img
+              <Image 
                 src="/nes.png"
                 alt="News Article"
+                width={400}
+                height={300}
                 className="w-full h-55 object-cover rounded mb-4"
               />
               <p className="text-lg font-semibold fade-in-3">
@@ -303,10 +298,7 @@ export default function SeoriBirthdayPage() {
               </p>
             </div>
           </div>
-          <button
-            onClick={() => transitionToPhase(7)}
-            className="bg-[#ffffff] text-pink-600 px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg"
-          >
+          <button onClick={() => transitionToPhase(7)} className="bg-[#ffffff] text-pink-600 px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg">
             OMG :3
           </button>
         </div>
@@ -314,24 +306,23 @@ export default function SeoriBirthdayPage() {
 
       {/* Phase 7: Enhanced Photo Slideshow */}
       {currentPhase === 7 && (
-        <div
-          className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 p-4 ${isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}
-        >
+        <div className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 p-4 ${isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}>
           <div className="slideshow-container relative mb-8 fade-in-1 w-full max-w-4xl px-4">
-            <div 
-              className="flex items-center justify-center h-96 relative"
+            <div className="flex items-center justify-center h-96 relative"
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUp}
-            >
+              onMouseUp={handleMouseUp}>
+              
               {/* Previous Slide */}
               <div className="absolute -left-16 w-64 h-full opacity-40 transform scale-75">
-                <img
+                <Image
                   src={slideshowImages[(currentSlide - 1 + slideshowImages.length) % slideshowImages.length]}
                   alt="Previous"
+                  width={400}
+                  height={300}
                   className="w-full h-full object-cover rounded-lg blur-[1px]"
                 />
               </div>
@@ -349,22 +340,16 @@ export default function SeoriBirthdayPage() {
 
               {/* Next Slide */}
               <div className="absolute -right-16 w-64 h-full opacity-40 transform scale-75">
-                <img
+                <Image
                   src={slideshowImages[(currentSlide + 1) % slideshowImages.length]}
                   alt="Next"
+                  width={400}
+                  height={300}
                   className="w-full h-full object-cover rounded-lg blur-[1px]"
                 />
               </div>
             </div>
           </div>
-
-          <p className="text-2xl font-bold text-pink-600 text-center fade-in-2">That's adorable :0</p>
-          <button
-            onClick={() => transitionToPhase(8)}
-            className="bg-[#ffffff] text-pink-600 px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg mt-8"
-          >
-            i know right?
-          </button>
         </div>
       )}
 
