@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import Image from 'next/image' // Replace img with Next.js Image
 
 export default function SeoriBirthdayPage() {
   const [currentPhase, setCurrentPhase] = useState(1)
@@ -171,11 +171,11 @@ export default function SeoriBirthdayPage() {
   }
 
   // Transition classes
-  const getTransitionClasses = (isEntering: boolean) => `
-    transform-gpu transition-all duration-300 ease-in-out
+  const getTransitionClasses = () => `
+    transform-gpu transition-all duration-1000 ease-out
     ${isTransitioning 
-      ? 'opacity-0 scale-98'
-      : 'opacity-100 scale-100'
+      ? 'opacity-0 translate-y-10 scale-95'
+      : 'opacity-100 translate-y-0 scale-100'
     }
   `
 
@@ -189,7 +189,7 @@ export default function SeoriBirthdayPage() {
       {/* Phase 1: Initial Screen */}
       {currentPhase === 1 && (
         <div
-          className={`h-screen w-full bg-black flex items-center justify-center transition-all duration-1000 ${getTransitionClasses(true)}`}
+          className={`h-screen w-full bg-black flex items-center justify-center transition-all duration-1000 ${getTransitionClasses()}`}
         >
           <button
             onClick={startCelebration}
@@ -203,7 +203,7 @@ export default function SeoriBirthdayPage() {
       {/* Phase 2: Date Reveal */}
       {currentPhase === 2 && (
         <div
-          className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 ${getTransitionClasses(true)}`}
+          className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 ${getTransitionClasses()}`}
         >
           <div className="text-center space-y-8">
             <div className="slide-up-1 text-6xl md:text-8xl font-bold text-pink-600 drop-shadow-lg">4/6/2025</div>
@@ -217,7 +217,7 @@ export default function SeoriBirthdayPage() {
       {/* Phase 3: Birthday Announcement */}
       {currentPhase === 3 && (
         <div
-          className={`h-screen w-full bg-[#fae6e7] flex items-center justify-center relative transition-all duration-1000 ${getTransitionClasses(true)}`}
+          className={`h-screen w-full bg-[#fae6e7] flex items-center justify-center relative transition-all duration-1000 ${getTransitionClasses()}`}
         >
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-purple-800 animate-bounce drop-shadow-lg">
@@ -232,7 +232,7 @@ export default function SeoriBirthdayPage() {
       {/* Phase 4: Letter Invitation */}
       {currentPhase === 4 && (
         <div
-          className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 ${getTransitionClasses(true)}`}
+          className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 ${getTransitionClasses()}`}
         >
           <div className="letter-envelope shake-animation mb-8">
             <img
@@ -265,7 +265,7 @@ export default function SeoriBirthdayPage() {
                   Hope your special day is filled with joy, laughter, and all your favorite things!
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed fade-in-4">
-                  Aslo sorry for being late yk coding this was somehow a disaster :P
+                  Also sorry for being late y&apos;know coding this was somehow a disaster :P
                 </p>
               </div>
             </div>
@@ -338,9 +338,11 @@ export default function SeoriBirthdayPage() {
 
               {/* Current Slide */}
               <div className="w-80 h-full z-10 transform transition-all duration-500">
-                <img
+                <Image
                   src={slideshowImages[currentSlide]}
                   alt={`Seori Photo ${currentSlide + 1}`}
+                  width={400}
+                  height={300}
                   className="w-full h-full object-cover rounded-lg shadow-2xl"
                 />
               </div>
@@ -369,7 +371,7 @@ export default function SeoriBirthdayPage() {
       {/* Phase 8: Sweet Messages */}
       {currentPhase === 8 && (
         <div
-          className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 ${getTransitionClasses(true)}`}
+          className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 ${getTransitionClasses()}`}
         >
           <div className="text-center space-y-8">
             <div className="slide-up-1 text-4xl md:text-6xl font-bold text-pink-600">Anyways</div>
@@ -384,7 +386,7 @@ export default function SeoriBirthdayPage() {
       {/* Phase 9: Final Message */}
       {currentPhase === 9 && (
         <div
-          className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 ${getTransitionClasses(true)}`}
+          className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 ${getTransitionClasses()}`}
         >
           <div className="text-center space-y-8">
             <div className="slide-up-1 text-4xl md:text-6xl font-bold text-pink-600">by the way</div>
