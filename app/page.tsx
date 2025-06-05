@@ -12,6 +12,7 @@ export default function SeoriBirthdayPage() {
   const [isDragging, setIsDragging] = useState(false)
   const [mouseStart, setMouseStart] = useState(0)
   const [mouseEnd, setMouseEnd] = useState(0)
+  const [musicStarted, setMusicStarted] = useState(false)  // Add this line
   const audioRef = useRef<HTMLAudioElement>(null)
 
   // Placeholder slideshow images
@@ -187,14 +188,12 @@ export default function SeoriBirthdayPage() {
 
       {/* Phase 1: Initial Screen */}
       {currentPhase === 1 && (
-        <div
-          className={`h-screen w-full bg-black flex items-center justify-center transition-all duration-1000 ${getTransitionClasses()}`}
-        >
+        <div className={`h-screen w-full bg-black flex items-center justify-center transition-all duration-1000 ${getTransitionClasses()}`}>
           <button
             onClick={startCelebration}
             className="text-white text-2xl md:text-3xl font-bold hover:scale-105 transition-transform cursor-pointer animate-pulse"
           >
-            Click to begin :3
+            {musicStarted ? 'Loading...' : 'Click to begin :3'}
           </button>
         </div>
       )}
@@ -220,7 +219,7 @@ export default function SeoriBirthdayPage() {
         >
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-purple-800 animate-bounce drop-shadow-lg">
-              IT'S SEORI'S BIRTHDAY! 🎉
+              IT&apos;S SEORI&apos;S BIRTHDAY! 🎉
             </h1>
           </div>
           {/* Confetti */}
@@ -234,10 +233,12 @@ export default function SeoriBirthdayPage() {
           className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 ${getTransitionClasses()}`}
         >
           <div className="letter-envelope shake-animation mb-8">
-            <img
-              src="/letter.jpg"  // Make sure to add this image to your public folder
+            <Image
+              src="/letter.jpg"
               alt="Letter Envelope"
-              className="w-96 h-72 object-cover rounded-lg shadow-2xl border-4 border-white transform rotate-3 hover:rotate-0 transition-all duration-300"
+              width={384} // w-96 = 24rem = 384px
+              height={288} // h-72 = 18rem = 288px
+              className="object-cover rounded-lg shadow-2xl border-4 border-white transform rotate-3 hover:rotate-0 transition-all duration-300"
             />
           </div>
           <button
