@@ -301,8 +301,8 @@ export default function SeoriBirthdayPage() {
       {currentPhase === 6 && (
         <div className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 p-4 ${isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}>
           {/* Add the new text above */}
-          <div className="text-3xl md:text-4xl text-pink-600 font-semibold mb-8 text-center fade-in-1">
-            don&pos; t be surprised, but you&apos;re in the news
+           <div className="text-xl md:text-4xl text-pink-600 font-semibold mb-8 text-center fade-in-1">
+            Woah, you&apos;re on THE NEWS???
           </div>
 
           {/* Existing news article content */}
