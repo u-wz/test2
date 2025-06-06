@@ -208,7 +208,7 @@ export default function SeoriBirthdayPage() {
         >
           <div className="text-center space-y-8">
             <div className="slide-up-1 text-6xl md:text-8xl font-bold text-pink-600 drop-shadow-lg">4/6/2025</div>
-            <div className="slide-up-2 text-3xl md:text-5xl text-pink-500 font-semibold">This date look familiar?</div>
+            <div className="slide-up-2 text-3xl md:text-5xl text-pink-500 font-semibold">This date looks familiar?</div>
             <div className="slide-up-3 text-4xl md:text-6xl text-pink-400">...</div>
             <div className="slide-up-6 text-3xl md:text-5xl text-pink-500 italic font-medium">Oh wait...</div>
           </div>
@@ -315,10 +315,11 @@ export default function SeoriBirthdayPage() {
                 height={300}
                 className="w-full h-55 object-cover rounded mb-4"
               />
-              <p className="text-lg font-semibold fade-in-3">
+              {/* News Article text */}
+              <p className="text-base md:text-lg font-semibold fade-in-3">
                 Local Celebrity Seori Celebrates Another Year of Awesomeness!
               </p>
-              <p className="text-sm text-gray-600 mt-2 fade-in-4">
+              <p className="text-xs md:text-sm text-gray-600 mt-2 fade-in-4">
                 ran out of ideas for this part so I just put a news article here :P
               </p>
             </div>
@@ -332,7 +333,7 @@ export default function SeoriBirthdayPage() {
       {/* Phase 7: Enhanced Photo Slideshow */}
       {currentPhase === 7 && (
         <div className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 p-4 ${isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}>
-          <div className="text-3xl md:text-4xl text-pink-600 font-semibold mb-8 text-center fade-in-1">
+          <div className="text-xl md:text-4xl text-pink-600 font-semibold mb-8 text-center fade-in-1">
             Thats so adorable, here are some photos of you :D
           </div>
           <div className="slideshow-container relative mb-8 fade-in-1 w-full max-w-4xl px-4">
