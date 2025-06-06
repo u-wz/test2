@@ -268,21 +268,21 @@ export default function SeoriBirthdayPage() {
         <div
           className={`h-screen w-full flex flex-col items-center justify-center transition-all duration-1000 p-4 ${isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}
         >
-          <div className="notebook-paper max-w-xl w-full bg-white border-l-4 border-pink-600 shadow-2xl p-8 mb-8 relative transform rotate-1">
+          <div className="notebook-paper max-w-xl w-full bg-white border-l-4 border-pink-600 shadow-2xl p-4 md:p-8 mb-8 relative transform rotate-1">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-50 to-transparent opacity-30"></div>
             <div className="relative z-10">
-              <div className="text-center space-y-6">
-                <h2 className="text-4xl font-bold text-pink-800 mb-8 fade-in-1">Dear Seori,</h2>
-                <p className="text-xl md:text-2xl text-gray-700 leading-relaxed fade-in-2 mb-6">
+              <div className="text-center space-y-4 md:space-y-6">
+                <h2 className="text-2xl md:text-4xl font-bold text-pink-800 mb-4 md:mb-8 fade-in-1">Dear Seori,</h2>
+                <p className="text-base md:text-2xl text-gray-700 leading-relaxed fade-in-2 mb-3 md:mb-6">
                   Happy Birthday! 🎉
                 </p>
-                <p className="text-lg md:text-xl text-gray-700 leading-relaxed fade-in-3 mb-6">
+                <p className="text-sm md:text-xl text-gray-700 leading-relaxed fade-in-3 mb-3 md:mb-6">
                   Hope your special day is filled with joy, laughter, and all your favorite things! 💝
                 </p>
-                <p className="text-lg md:text-xl text-gray-700 leading-relaxed fade-in-4 mb-6">
+                <p className="text-sm md:text-xl text-gray-700 leading-relaxed fade-in-4 mb-3 md:mb-6">
                   It might be weird that we don&apos;t know each other and it doesn&apos;t matter, but I just wanted to say that you are an amazing person 💖
                 </p>
-                <p className="text-lg md:text-xl text-gray-700 leading-relaxed fade-in-4 italic">
+                <p className="text-sm md:text-xl text-gray-700 leading-relaxed fade-in-4 italic">
                   Also sorry for being late... y&apos;know coding this was somehow a disaster, Welp :P
                 </p>
               </div>
