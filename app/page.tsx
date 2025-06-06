@@ -129,7 +129,7 @@ export default function SeoriBirthdayPage() {
     if (currentPhase === 3) {
       const timer = setTimeout(() => {
         transitionToPhase(4)
-      }, 5000)
+      }, 7000)
       return () => clearTimeout(timer)
     }
 
@@ -180,11 +180,14 @@ export default function SeoriBirthdayPage() {
   `
 
   return (
-    <div className="min-h-screen w-full overflow-hidden relative">
+    
+    <div className="min-h-screen w-full overflow-hidden relative bg-[#fae6e7]">
+      <link rel='icon' href='/favicon.ico' />
       {/* Background Music */}
       <audio ref={audioRef} loop>
         <source src="/birthday-music.mp3" type="audio/mpeg" />
       </audio>
+
 
       {/* Phase 1: Initial Screen */}
       {currentPhase === 1 && (
@@ -201,7 +204,7 @@ export default function SeoriBirthdayPage() {
       {/* Phase 2: Date Reveal */}
       {currentPhase === 2 && (
         <div
-          className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 ${getTransitionClasses()}`}
+          className={`h-screen w-full flex flex-col items-center justify-center transition-all duration-1000 ${getTransitionClasses()}`}
         >
           <div className="text-center space-y-8">
             <div className="slide-up-1 text-6xl md:text-8xl font-bold text-pink-600 drop-shadow-lg">4/6/2025</div>
@@ -217,10 +220,20 @@ export default function SeoriBirthdayPage() {
         <div
           className={`h-screen w-full bg-[#fae6e7] flex items-center justify-center relative transition-all duration-1000 ${getTransitionClasses()}`}
         >
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-purple-800 animate-bounce drop-shadow-lg">
+          <div className="text-center space-y-12">
+            <h1 className="text-4xl md:text-6xl font-bold text-purple-800 animate-bounce drop-shadow-lg slide-up-1">
               IT&apos;S SEORI&apos;S BIRTHDAY! 🎉
             </h1>
+            
+            {/* Number transition container */}
+            <div className="relative h-48 md:h-64">
+              <span className="absolute inset-0 flex items-center justify-center text-[8rem] md:text-[12rem] font-bold text-pink-600 number-fade-out">
+                15
+              </span>
+              <span className="absolute inset-0 flex items-center justify-center text-[8rem] md:text-[12rem] font-bold text-pink-600 number-fade-in">
+                16
+              </span>
+            </div>
           </div>
           {/* Confetti */}
           <div className="confetti-container">{createConfetti()}</div>
@@ -255,7 +268,7 @@ export default function SeoriBirthdayPage() {
         <div
           className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 ${isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}
         >
-          <div className="notebook-paper w-96 h-80 bg-white border-l-4 border-pink-600 shadow-2xl p-8 mb-8 relative transform rotate-1">
+          <div className="notebook-paper w-96 h-120 bg-white border-l-4 border-pink-600 shadow-2xl p-8 mb-8 relative transform rotate-1">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-50 to-transparent opacity-30"></div>
             <div className="relative z-10">
               <div className="text-center space-y-4">
@@ -265,7 +278,10 @@ export default function SeoriBirthdayPage() {
                   Hope your special day is filled with joy, laughter, and all your favorite things!
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed fade-in-4">
-                  Also sorry for being late y&apos;know coding this was somehow a disaster :P
+                  It might be weird that we don&apos;t know each other and it doesn&apos;t matter, but I just wanted to say that you are an amazing.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed fade-in-4">
+                  Also sorry for being late y&apos;know coding this was somehow a disaster, Welp :P
                 </p>
               </div>
             </div>
@@ -282,7 +298,13 @@ export default function SeoriBirthdayPage() {
       {/* Phase 6: News Article */}
       {currentPhase === 6 && (
         <div className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 p-4 ${isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}>
-          <div className="news-article bg-white border-4 border-gray-300 rounded-lg shadow-2xl p-6 mb-8 max-w-lg fade-in-2">
+          {/* Add the new text above */}
+          <div className="text-3xl md:text-4xl text-pink-600 font-semibold mb-8 text-center fade-in-1">
+            to be surprised baby, but you&apos;re in the news
+          </div>
+
+          {/* Existing news article content */}
+          <div className="news-article bg-white border-4 border-black-500 rounded-lg shadow-2xl p-6 mb-8 max-w-lg fade-in-2">
             <div className="text-center">
               <Image 
                 src="/nes.png"
@@ -351,6 +373,13 @@ export default function SeoriBirthdayPage() {
               </div>
             </div>
           </div>
+          {/* Add Continue button */}
+          <button 
+            onClick={() => transitionToPhase(8)} 
+            className="bg-[#ffffff] text-pink-600 px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg mt-8"
+          >
+            Continue
+          </button>
         </div>
       )}
 
@@ -376,10 +405,18 @@ export default function SeoriBirthdayPage() {
         >
           <div className="text-center space-y-8">
             <div className="slide-up-1 text-4xl md:text-6xl font-bold text-pink-600">by the way</div>
-            <div className="slide-up-2 text-3xl md:text-5xl text-pink-500">this site is all yours now</div>
-            <div className="slide-up-3 text-4xl md:text-6xl text-pink-600">it wont expire for 3 whole months</div>
-            <div className="slide-up-4 text-3xl md:text-5xl text-pink-500">or more...</div>
-            <div className="slide-up-5 text-4xl md:text-6xl text-pink-600">depends on the server idk</div>
+            <div className="slide-up-2 text-3xl md:text-5xl text-pink-500">
+              this site is all yours now
+            </div>
+            <div className="slide-up-3 text-4xl md:text-6xl text-pink-600">
+              it won&apos;t expire for 3 whole months
+            </div>
+            <div className="slide-up-4 text-3xl md:text-5xl text-pink-500 text-center">
+              or more...
+            </div>
+            <div className="slide-up-5 text-4xl md:text-6xl text-pink-600 text-center">
+              depends on the server idk
+            </div>
           </div>
         </div>
       )}
@@ -542,6 +579,40 @@ export default function SeoriBirthdayPage() {
         @keyframes fadeInOut {
           0%, 100% { opacity: 0.3; }
           50% { opacity: 0.7; }
+        }
+
+        /* Number transition animations */
+        .number-fade-out {
+          animation: numberFadeOut 4s ease-out forwards;
+          animation-delay: 0.5s;
+        }
+
+        .number-fade-in {
+          opacity: 0;
+          animation: numberFadeIn 4s ease-out forwards;
+          animation-delay: 0.5s;
+        }
+
+        @keyframes numberFadeOut {
+          0% {
+            opacity: 1;
+            transform: scale(1);
+          }
+          100% {
+            opacity: 0;
+            transform: scale(0.8);
+          }
+        }
+
+        @keyframes numberFadeIn {
+          0% {
+            opacity: 0;
+            transform: scale(1.2);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
         }
       `}</style>
     </div>
