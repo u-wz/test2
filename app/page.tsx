@@ -249,7 +249,7 @@ export default function SeoriBirthdayPage() {
             <Image
               src="/letter.jpg"
               alt="Letter Envelope"
-              width={384} // w-96 = 24rem = 384px
+              width={332} // w-96 = 24rem = 384px
               height={288} // h-72 = 18rem = 288px
               className="object-cover rounded-lg shadow-2xl border-4 border-white transform rotate-3 hover:rotate-0 transition-all duration-300"
             />
@@ -268,7 +268,7 @@ export default function SeoriBirthdayPage() {
         <div
           className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 ${isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}
         >
-          <div className="notebook-paper w-96 h-120 bg-white border-l-4 border-pink-600 shadow-2xl p-8 mb-8 relative transform rotate-1">
+          <div className="notebook-paper w-84 h-120 bg-white border-l-4 border-pink-600 shadow-2xl p-8 mb-8 relative transform rotate-1">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-50 to-transparent opacity-30"></div>
             <div className="relative z-10">
               <div className="text-center space-y-4">
@@ -330,6 +330,9 @@ export default function SeoriBirthdayPage() {
       {/* Phase 7: Enhanced Photo Slideshow */}
       {currentPhase === 7 && (
         <div className={`h-screen w-full bg-[#fae6e7] flex flex-col items-center justify-center transition-all duration-1000 p-4 ${isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}>
+          <div className="text-3xl md:text-4xl text-pink-600 font-semibold mb-8 text-center fade-in-1">
+            Thats so adorable, here are some photos of you :D
+          </div>
           <div className="slideshow-container relative mb-8 fade-in-1 w-full max-w-4xl px-4">
             <div className="flex items-center justify-center h-96 relative"
               onTouchStart={handleTouchStart}
