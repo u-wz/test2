@@ -399,7 +399,7 @@ export default function SeoriBirthdayPage() {
             <div className="slide-up-2 text-3xl md:text-5xl text-pink-500">I bought extended plan for your site</div>
             <div className="slide-up-3 text-4xl md:text-6xl text-pink-600">i think this going to work</div>
             <div className="slide-up-4 text-3xl md:text-5xl text-pink-500">for 2 years</div>
-            <div className="slide-up-5 text-4xl md:text-6xl text-pink-600">>:3</div>
+            <div className="slide-up-5 text-4xl md:text-6xl text-pink-600">:3</div>
           </div>
         </div>
       )}
