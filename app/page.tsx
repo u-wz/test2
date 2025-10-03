@@ -396,10 +396,10 @@ export default function SeoriBirthdayPage() {
         >
           <div className="text-center space-y-8">
             <div className="slide-up-1 text-4xl md:text-6xl font-bold text-pink-600">Anyways</div>
-            <div className="slide-up-2 text-3xl md:text-5xl text-pink-500">I hope You have</div>
-            <div className="slide-up-3 text-4xl md:text-6xl text-pink-600">A lovely day</div>
-            <div className="slide-up-4 text-3xl md:text-5xl text-pink-500">Sweetie</div>
-            <div className="slide-up-5 text-4xl md:text-6xl text-pink-600">:3</div>
+            <div className="slide-up-2 text-3xl md:text-5xl text-pink-500">I bought extended plan for your site</div>
+            <div className="slide-up-3 text-4xl md:text-6xl text-pink-600">i think this going to work</div>
+            <div className="slide-up-4 text-3xl md:text-5xl text-pink-500">for 2 years</div>
+            <div className="slide-up-5 text-4xl md:text-6xl text-pink-600">>:3</div>
           </div>
         </div>
       )}
@@ -412,16 +412,16 @@ export default function SeoriBirthdayPage() {
           <div className="text-center space-y-8">
             <div className="slide-up-1 text-4xl md:text-6xl font-bold text-pink-600">by the way</div>
             <div className="slide-up-2 text-3xl md:text-5xl text-pink-500">
-              this site is all yours now
+              I would be happy if you want custom domain for this
             </div>
             <div className="slide-up-3 text-4xl md:text-6xl text-pink-600">
-              it won&apos;t expire for 3 whole months
+              although might cost me some money
             </div>
             <div className="slide-up-4 text-3xl md:text-5xl text-pink-500 text-center">
-              or more...
+              but Im okay with thst
             </div>
             <div className="slide-up-5 text-4xl md:text-6xl text-pink-600 text-center">
-              depends on the server idk
+              yeah just dm me..
             </div>
           </div>
         </div>
